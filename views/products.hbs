@@ -1,0 +1,16 @@
+<h1>{{title}}</h1>
+<p>{{title}}</p>
+<p>Please browse our catalog,{{user}}!</p>
+<ul class="product_list">
+  {{#each items}}
+  <li>
+    <ul>
+      <li><strong>Product Name</strong>: <a href="/products/view/{{this.id}}/?session={{../user}}">{{this.name}}</a></li>
+      <li><strong>Price</strong>: {{this.price}} EUR</li>
+      <li><strong>Stock</strong>: <em>{{this.quantity}} units</em> </li>
+      <li><a href="/products/buy/{{this.id}}/?price={{this.price}}&session={{../user}}">BUY</a></li>
+    </ul>
+  </li>
+  {{/each}}
+</ul>
+<a href="/">Homepage</a>
